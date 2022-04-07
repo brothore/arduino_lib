@@ -20,12 +20,15 @@ namespace lino_msgs
       _L_car_type L_car;
       typedef float _Reset_car_type;
       _Reset_car_type Reset_car;
+      typedef int32_t _out_time_type;
+      _out_time_type out_time;
 
     car_param():
       R_wheel(0),
       W_car(0),
       L_car(0),
-      Reset_car(0)
+      Reset_car(0),
+      out_time(0)
     {
     }
 
@@ -72,6 +75,16 @@ namespace lino_msgs
       *(outbuffer + offset + 2) = (u_Reset_car.base >> (8 * 2)) & 0xFF;
       *(outbuffer + offset + 3) = (u_Reset_car.base >> (8 * 3)) & 0xFF;
       offset += sizeof(this->Reset_car);
+      union {
+        int32_t real;
+        uint32_t base;
+      } u_out_time;
+      u_out_time.real = this->out_time;
+      *(outbuffer + offset + 0) = (u_out_time.base >> (8 * 0)) & 0xFF;
+      *(outbuffer + offset + 1) = (u_out_time.base >> (8 * 1)) & 0xFF;
+      *(outbuffer + offset + 2) = (u_out_time.base >> (8 * 2)) & 0xFF;
+      *(outbuffer + offset + 3) = (u_out_time.base >> (8 * 3)) & 0xFF;
+      offset += sizeof(this->out_time);
       return offset;
     }
 
@@ -122,11 +135,22 @@ namespace lino_msgs
       u_Reset_car.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
       this->Reset_car = u_Reset_car.real;
       offset += sizeof(this->Reset_car);
+      union {
+        int32_t real;
+        uint32_t base;
+      } u_out_time;
+      u_out_time.base = 0;
+      u_out_time.base |= ((uint32_t) (*(inbuffer + offset + 0))) << (8 * 0);
+      u_out_time.base |= ((uint32_t) (*(inbuffer + offset + 1))) << (8 * 1);
+      u_out_time.base |= ((uint32_t) (*(inbuffer + offset + 2))) << (8 * 2);
+      u_out_time.base |= ((uint32_t) (*(inbuffer + offset + 3))) << (8 * 3);
+      this->out_time = u_out_time.real;
+      offset += sizeof(this->out_time);
      return offset;
     }
 
     virtual const char * getType() override { return "lino_msgs/car_param"; };
-    virtual const char * getMD5() override { return "71265fe5412a6ab64209f231f18d49fc"; };
+    virtual const char * getMD5() override { return "3ea72a41c2a9f150b8f2e47b164a570d"; };
 
   };
 
