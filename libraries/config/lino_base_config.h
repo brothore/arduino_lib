@@ -21,8 +21,8 @@
 
 #define DEBUG 1
 
-#define K_P 1.0 // P constant
-#define K_I 0.1 // I constant
+#define K_P 1.7 // P constant
+#define K_I 0.4 // I constant
 #define K_D 0// D constant
 
 //define your robot' specs here
