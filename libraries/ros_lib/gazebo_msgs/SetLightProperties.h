@@ -4,8 +4,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include "ros/msg.h"
+<<<<<<< HEAD
 #include "std_msgs/ColorRGBA.h"
 #include "geometry_msgs/Vector3.h"
+=======
+#include "geometry_msgs/Vector3.h"
+#include "std_msgs/ColorRGBA.h"
+>>>>>>> ce109bf511120f6064c45d5fd2b91763ee4fd365
 #include "geometry_msgs/Pose.h"
 
 namespace gazebo_msgs

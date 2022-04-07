@@ -71,7 +71,11 @@ class Kinematics
         velocities getVelocities(int rpm1, int rpm2, int rpm3, int rpm4, int rpm5, int rpm6);
         rpm getRPM(float linear_x, float linear_y, float angular_z);
 
+<<<<<<< HEAD
     private:
+=======
+    public:
+>>>>>>> ce109bf511120f6064c45d5fd2b91763ee4fd365
         rpm calculateRPM(float linear_x, float linear_y, float angular_z);
         int getTotalWheels(base robot_base);
 

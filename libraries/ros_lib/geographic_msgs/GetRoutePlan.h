@@ -4,8 +4,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include "ros/msg.h"
+<<<<<<< HEAD
 #include "geographic_msgs/RoutePath.h"
 #include "uuid_msgs/UniqueID.h"
+=======
+#include "uuid_msgs/UniqueID.h"
+#include "geographic_msgs/RoutePath.h"
+>>>>>>> ce109bf511120f6064c45d5fd2b91763ee4fd365
 
 namespace geographic_msgs
 {

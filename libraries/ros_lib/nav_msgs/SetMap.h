@@ -4,8 +4,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include "ros/msg.h"
+<<<<<<< HEAD
 #include "geometry_msgs/PoseWithCovarianceStamped.h"
 #include "nav_msgs/OccupancyGrid.h"
+=======
+#include "nav_msgs/OccupancyGrid.h"
+#include "geometry_msgs/PoseWithCovarianceStamped.h"
+>>>>>>> ce109bf511120f6064c45d5fd2b91763ee4fd365
 
 namespace nav_msgs
 {
