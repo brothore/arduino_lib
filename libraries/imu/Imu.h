@@ -6,7 +6,10 @@
 #include "JY901_Serial.h"
 #include <Wire.h>
 #include "geometry_msgs/Vector3.h"
+void receiveIMUdata(){
+    JY901.receiveSerialData();
 
+}
 bool initIMU()
 {
     // Wire.begin();
@@ -36,12 +39,12 @@ geometry_msgs::Vector3 readAccelerometer()
     int16_t ax, ay, az;
     
     // accelerometer.getAcceleration(&ax, &ay, &az);
-
+    // ax = 
     // accel.x = ax * (double) ACCEL_SCALE * G_TO_ACCEL;
     // accel.y = ay * (double) ACCEL_SCALE * G_TO_ACCEL;
     // accel.z = az * (double) ACCEL_SCALE * G_TO_ACCEL;
 
-       accel.x = JY901.getAccX()* G_TO_ACCEL;
+    accel.x = JY901.getAccX()* G_TO_ACCEL;
     accel.y = JY901.getAccY()* G_TO_ACCEL;
     accel.z = JY901.getAccZ()* G_TO_ACCEL;
 
