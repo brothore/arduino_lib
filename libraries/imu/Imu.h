@@ -14,7 +14,7 @@ bool initIMU()
 {
     // Wire.begin();
     // bool ret;
-    JY901.attach(Serial1);
+    // JY901.attach(Serial2);
     // accelerometer.initialize();
     // ret = accelerometer.testConnection();
     // if(!ret)
